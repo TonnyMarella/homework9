@@ -14,26 +14,26 @@ def input_error(func):
 
 
 @input_error
-def add(string):
-    contacts[string[0]] = string[1]
+def add_new_contact(new_contact):
+    contacts[new_contact[0]] = new_contact[1]
 
 
 @input_error
-def change(string):
-    s = contacts[string[0]]
-    contacts[string[0]] = string[1]
+def change_contact(contact):
+    examination = contacts[contact[0]]
+    contacts[contact[0]] = contact[1]
 
 
 @input_error
-def phone(string):
-    return f'Number:{contacts[string[0]]}'
+def get_contact_phone(name_contact):
+    return f'Number:{contacts[name_contact[0]]}'
 
 
 def main():
     commands = {
-        'add': add,
-        'change': change,
-        'phone': phone,
+        'add': add_new_contact,
+        'change': change_contact,
+        'phone': get_contact_phone,
     }
 
     while True:
@@ -50,7 +50,7 @@ def main():
             print(contacts)
         elif a.split()[0] in commands:
             result = commands[a.split()[0]](a.split()[1:])
-        if result:
+        elif result:
             print(result)
 
 
