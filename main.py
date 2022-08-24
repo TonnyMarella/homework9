@@ -1,7 +1,3 @@
-contacts = {
-}
-
-
 def input_error(func):
     def inner(string):
         try:
@@ -59,4 +55,6 @@ def main():
 
 
 if __name__ == '__main__':
+    contacts = {
+    }
     main()
